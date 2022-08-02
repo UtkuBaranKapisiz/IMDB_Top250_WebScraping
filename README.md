@@ -1,5 +1,7 @@
 # IMDB_Top250_WebScraping
 In this project, I will scripe the name, year and rate datas of IMDB top 250 Movies
+## TO DO
+* Will add another code to scrape genres from the links in the csv file
 # Site
 > https://www.imdb.com/chart/top/?ref_=nv_mv_250
 # Result
