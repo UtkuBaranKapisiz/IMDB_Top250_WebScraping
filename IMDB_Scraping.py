@@ -3,9 +3,9 @@ import pandas as pd
 import requests
 
 # I COULD HAVE USED ONE LOOP TO COLLECT NAMES,YEAR AND RATINGS BUT THIS WAS EASIER TO READ
-
-url = requests.get('https://www.imdb.com/chart/top/?ref_=nv_mv_250')
-soup = BeautifulSoup(url.content, 'html.parser')
+base_url = 'https://www.imdb.com/chart/top/?ref_=nv_mv_250'
+url = requests.get(base_url)
+soup = BeautifulSoup(url.text, "lxml")
 # df = pd.DataFrame(columns=["Name", "Rating", "Year"])
 df = pd.DataFrame()
 
@@ -18,9 +18,9 @@ for element in movie_names:
 df["Name"] = movie_name_list
 
 # COLLECTS THE YEARS
-movie_ratings = soup.find_all("td", class_="ratingColumn imdbRating")
+movie_years = soup.find_all("td", class_="ratingColumn imdbRating")
 movie_rating_list = []
-for element in movie_ratings:
+for element in movie_years:
     movie = element.text.strip()
     movie_rating_list.append(movie)
 df["Rate"] = movie_rating_list
@@ -32,6 +32,14 @@ for element in movie_ratings:
     movie = element.text.strip("()")
     movie_year_list.append(movie)
 df["Year"] = movie_year_list
-print(df)
-df.to_csv('C:\\Users\\utku1\\Desktop\\CODE\\Python Codes\\List.csv',
+# COLLECTS THE LINKS
+table = soup.find_all("table")
+movie_link_list = []
+for i in table:
+    get_td = i.find_all('td', class_="titleColumn")
+    for j in get_td:
+        get_ = j.find('a')['href'].strip().split('>')[-1]
+        movie_link_list.append("www.imdb.com" + get_)
+df["Link"] = movie_link_list
+df.to_csv('C:\\Users\\utku1\\Documents\\GitHub\\IMDB_Top250_WebScraping\List.csv',
           sep=",", index=False)
