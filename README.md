@@ -5,4 +5,4 @@ In this project, I will scripe the name, year and rate datas of IMDB top 250 Mov
 # Site
 > https://www.imdb.com/chart/top/?ref_=nv_mv_250
 # Result
-![Screenshot 2022-08-02 155442](https://user-images.githubusercontent.com/97388983/182379703-0407cfe1-03cd-404a-9934-d7e4f4010a0f.png)
+![image](https://user-images.githubusercontent.com/97388983/182388828-2b2f999f-8439-4b3d-9c02-2e1410e2f842.png)
