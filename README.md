@@ -1,5 +1,5 @@
 # IMDB_Top250_WebScraping
-In this project, I will scripe the names, years, rates and links of IMDB top 250 Movies
+Test scrapping of Miuv: Data Science of mov'es
 ## TO DO
 * Will add another code to scrape genres from the links in the csv file
 # OUTPUT
