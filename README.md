@@ -1,5 +1,5 @@
 # IMDB_Top250_WebScraping
-Test scrapping of Miuv: Data Science of mov'es
+Test scrapping of MiLMo: ML on Movies
 ## TO DO
 * Will add another code to scrape genres from the links in the csv file
 # OUTPUT
